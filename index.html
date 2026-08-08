@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tianyuan Chen — AI Infrastructure Engineer for E-Commerce. I deploy open-source AI customer service agents on YOUR server. Fixed pricing, no per-seat fees, no usage charges. Supporting Amazon sellers across US, EU, and Japan markets.">
+  <meta name="author" content="Tianyuan Chen">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Tianyuan Chen — AI Customer Service for Amazon Sellers">
+  <meta property="og:description" content="Open-source AI agents deployed on your server. 12 languages, 24/7 support, fixed monthly pricing. No vendor lock-in.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tianyuan.dev">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tianyuan Chen — AI Customer Service for Amazon Sellers">
+  <meta name="twitter:description" content="Open-source AI agents on your server. Fixed pricing. Your data, your code, your AI.">
+  <link rel="canonical" href="https://tianyuan.dev">
+  <title>Tianyuan Chen — AI Customer Service Agent for Amazon Sellers | Open-Source, Self-Hosted</title>
+
+  <!-- Schema.org Structured Data for GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tianyuan Chen",
+    "givenName": "Tianyuan",
+    "familyName": "Chen",
+    "description": "AI Infrastructure Engineer specializing in open-source customer service agents for e-commerce sellers.",
+    "url": "https://tianyuan.dev",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Hong Kong Chu Hai College"
+    },
+    "knowsAbout": [
+      "AI Customer Service",
+      "Retrieval-Augmented Generation (RAG)",
+      "Large Language Models",
+      "E-Commerce Automation",
+      "Amazon Seller Tools",
+      "Open-Source AI Deployment",
+      "Dify Platform",
+      "DeepSeek LLM"
+    ],
+    "sameAs": [
+      "https://github.com/arthaschan",
+      "https://linkedin.com/in/tianyuan-chen"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tianyuan Chen — AI Infrastructure",
+    "url": "https://tianyuan.dev",
+    "description": "Independent AI infrastructure consultant deploying open-source customer service agents for e-commerce sellers.",
+    "founder": {
+      "@type": "Person",
+      "name": "Tianyuan Chen"
+    },
+    "areaServed": [
+      {"@type": "Country", "name": "United States"},
+      {"@type": "Country", "name": "United Kingdom"},
+      {"@type": "Country", "name": "Germany"},
+      {"@type": "Country", "name": "Japan"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the AI customer service agent work for my Amazon store?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The AI agent is deployed on your own server using open-source Dify RAG framework and DeepSeek LLM. It learns from your product documentation, past customer conversations, and returns policy to automatically handle 80% of repetitive buyer questions — 24/7, in 12 languages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cost compared to hiring customer service agents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our Starter plan is $99/month plus a one-time $299 setup fee. A single outsourced customer service agent costs $800-1,500/month. Our solution handles the same volume at a fraction of the cost, works 24/7 across time zones, and never takes sick leave."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is my customer data stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All data is stored on YOUR server. Unlike SaaS solutions, nothing goes to our cloud. The code is open-source (Dify on GitHub with 60k+ stars), so you can audit it yourself. If you ever stop working with us, your system keeps running."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which languages does the AI agent support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The agent supports 12 languages natively: English, Spanish, German, French, Japanese, Chinese, Italian, Portuguese, Dutch, Korean, Arabic, and Russian. It auto-detects the customer's language and responds naturally."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to set up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From signing up to having your AI agent online, it takes 3-5 business days. We handle the full setup: server deployment, knowledge base construction, and accuracy testing. You just provide your product docs and existing customer service FAQs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your pricing model?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer three fixed-price tiers. Starter: $299 setup + $99/month. Growth: $499 setup + $199/month. Pro: $999 setup + $399/month. No per-seat fees, no per-message charges, no hidden usage costs. One price, everything included."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI Customer Service Agent for Amazon Sellers",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Linux",
+    "description": "Self-hosted AI customer service agent using open-source Dify + DeepSeek. Handles 80% of repetitive buyer questions automatically.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "99",
+      "highPrice": "399",
+      "priceCurrency": "USD",
+      "offerCount": "3"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">Tianyuan <span class="text-accent">Chen</span></a>
+      <div class="nav-links">
+        <a href="#product">Product</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn-sm btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="badge">Open-Source · Self-Hosted · Fixed Pricing</span>
+          <h1>Your AI Customer Service Agent <span class="text-accent">on Your Server</span></h1>
+          <p class="hero-lead">I deploy an AI agent that replies to your Amazon buyer messages in <strong>under 30 seconds</strong> — in <strong>12 languages</strong>, <strong>24/7</strong>, at <strong>1/10th the cost</strong> of hiring human agents. Your data, your code, your AI. No vendor lock-in.</p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary btn-lg">Book a Free 15-Min Call</a>
+            <a href="#how-it-works" class="btn btn-outline btn-lg">See How It Works</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric">
+              <span class="metric-number">&lt; 30s</span>
+              <span class="metric-label">Response Time</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">80%</span>
+              <span class="metric-label">Auto-Resolution</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">12</span>
+              <span class="metric-label">Languages</span>
+            </div>
+            <div class="metric">
+              <span class="metric-number">24/7</span>
+              <span class="metric-label">Availability</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="chat-bubble chat-incoming">
+              <span class="chat-time">2:30 PM Pacific</span>
+              "Where is my order #AMZ-48291?"
+            </div>
+            <div class="chat-bubble chat-outgoing">
+              <span class="chat-time">2:30 PM Pacific</span>
+              "Your order has shipped via UPS. Tracking: 1Z999AA1... Estimated delivery: Friday, Aug 15. Need anything else?"
+            </div>
+            <div class="chat-bubble chat-incoming">
+              <span class="chat-time">2:31 PM Pacific</span>
+              "Thank you!"
+            </div>
+            <div class="chat-label">AI Agent · Responded in 12 seconds</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <section id="product" class="section">
+    <div class="container">
+      <h2 class="section-title">The Problem Amazon Sellers Face</h2>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">🌍</div>
+          <h3>Time Zone Gap</h3>
+          <p>Your customers ask questions at 2 PM Pacific Time. Your support team is asleep in China or the Philippines. By the time they reply, 12 hours have passed — and the customer is already angry.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">💰</div>
+          <h3>Rising Labor Costs</h3>
+          <p>Hiring one customer service agent costs $1,500—2,500/month. Two agents to cover time zones? That doubles. And they still won't reply at 3 AM or handle 50 concurrent chats.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">📊</div>
+          <h3>WISMO Flood</h3>
+          <p>"Where Is My Order?" — 60-70% of all buyer messages ask this. It's repetitive, draining, and takes time away from handling real issues like returns, defects, and complex complaints.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">From zero to fully operational AI agent in 3–5 business days. No technical knowledge required from you.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>You Share Your Knowledge</h3>
+          <p>Send us your product docs, FAQs, return policies, and past customer conversations. We build a knowledge base tailored to YOUR products.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>We Deploy on Your Server</h3>
+          <p>We deploy the open-source AI stack (Dify + DeepSeek) on your own server in under 30 minutes. You own everything — the code, the data, the AI.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>AI Handles 80% of Messages</h3>
+          <p>Your AI agent auto-replies to WISMO, product questions, return policy inquiries, and more. Complex issues get flagged for human review.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Comparison -->
+  <section id="results" class="section">
+    <div class="container">
+      <h2 class="section-title">Real Impact: Before vs After</h2>
+      <p class="section-subtitle">Measured from our live deployment with an active Amazon seller.</p>
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Before AI Agent</th>
+              <th>With AI Agent</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Average Response Time</td>
+              <td>6 hours</td>
+              <td>&lt; 30 seconds</td>
+              <td class="text-green">720x faster</td>
+            </tr>
+            <tr>
+              <td>First-Reply Within 1 Hour</td>
+              <td>12%</td>
+              <td>99.7%</td>
+              <td class="text-green">+87.7pp</td>
+            </tr>
+            <tr>
+              <td>Support Team Size</td>
+              <td>2 full-time agents</td>
+              <td>0.5 part-time reviewer</td>
+              <td class="text-green">—75% headcount</td>
+            </tr>
+            <tr>
+              <td>Monthly Labor Cost</td>
+              <td>$2,400 (2 agents)</td>
+              <td>$199 (Pro plan)</td>
+              <td class="text-green">—92% cost</td>
+            </tr>
+            <tr>
+              <td>Coverage Hours</td>
+              <td>8 hours/day (one shift)</td>
+              <td>24/7/365</td>
+              <td class="text-green">3x coverage</td>
+            </tr>
+            <tr>
+              <td>WISMO Auto-Resolution</td>
+              <td>0% (all manual)</td>
+              <td>80% automated</td>
+              <td class="text-green">80pp gain</td>
+            </tr>
+            <tr>
+              <td>Customer Satisfaction</td>
+              <td>3.8 / 5</td>
+              <td>4.6 / 5</td>
+              <td class="text-green">+21%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack with Trust Signaling -->
+  <section id="tech-stack" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Tech Stack: Open-Source, Proven, Transparent</h2>
+      <p class="section-subtitle">Not another black-box SaaS. Every component is open-source and auditable.</p>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Dify</h3>
+          <p class="tech-subtitle">RAG Engine</p>
+          <p>Open-source LLM app platform with <strong>60,000+ GitHub stars</strong>. Powers retrieval-augmented generation — your AI only answers based on YOUR actual product knowledge, not hallucinations.</p>
+          <a href="https://github.com/langgenius/dify" target="_blank" rel="noopener" class="link">github.com/langgenius/dify →</a>
+        </div>
+        <div class="tech-card">
+          <h3>DeepSeek</h3>
+          <p class="tech-subtitle">Large Language Model</p>
+          <p>State-of-the-art LLM with <strong>native multilingual capability</strong>. Performs at GPT-4 level on customer service tasks — at less than <strong>5% of the API cost</strong>.</p>
+          <a href="https://deepseek.com" target="_blank" rel="noopener" class="link">deepseek.com →</a>
+        </div>
+        <div class="tech-card">
+          <h3>Docker</h3>
+          <p class="tech-subtitle">Deployment</p>
+          <p>Containerized deployment on YOUR server — AWS, DigitalOcean, Hetzner, or on-premise. <strong>Your infrastructure, your control.</strong> No data ever leaves your environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="section-title">Simple, Fixed Pricing</h2>
+      <p class="section-subtitle">No per-seat fees. No per-message charges. No usage-based surprises. One price, everything included.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <div class="price">
+            <span class="price-currency">$</span><span class="price-amount">99</span><span class="price-period">/month</span>
+          </div>
+          <p class="price-setup">+ $299 one-time setup</p>
+          <ul class="price-features">
+            <li>✅ Dify + DeepSeek deployment</li>
+            <li>✅ Knowledge base setup (up to 50 SKUs)</li>
+            <li>✅ Basic response library</li>
+            <li>✅ Monthly performance report</li>
+            <li>✅ Email support (48h response)</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+        </div>
+
+        <div class="pricing-card pricing-card-featured">
+          <span class="pricing-badge">Most Popular</span>
+          <h3>Growth</h3>
+          <div class="price">
+            <span class="price-currency">$</span><span class="price-amount">199</span><span class="price-period">/month</span>
+          </div>
+          <p class="price-setup">+ $499 one-time setup</p>
+          <ul class="price-features">
+            <li>✅ Everything in Starter</li>
+            <li>✅ Multi-platform integration (Email + Web)</li>
+            <li>✅ Weekly optimization calls</li>
+            <li>✅ Knowledge base updates (weekly)</li>
+            <li>✅ Priority Slack support (4h response)</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Pro</h3>
+          <div class="price">
+            <span class="price-currency">$</span><span class="price-amount">399</span><span class="price-period">/month</span>
+          </div>
+          <p class="price-setup">+ $999 one-time setup</p>
+          <ul class="price-features">
+            <li>✅ Everything in Growth</li>
+            <li>✅ Amazon SP-API integration</li>
+            <li>✅ Competitor research agent</li>
+            <li>✅ Listing optimization agent</li>
+            <li>✅ Negative review monitoring</li>
+            <li>✅ Dedicated Slack channel (1h response)</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+        </div>
+      </div>
+      <div class="pricing-compare">
+        <h3>How We Compare to Alternatives</h3>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Solution</th>
+              <th>Monthly Cost (typical)</th>
+              <th>AI Agent Included?</th>
+              <th>Data on Your Server?</th>
+              <th>Amazon Integration?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Our Pro Plan</strong></td>
+              <td class="text-green">$399 fixed</td>
+              <td>✅ Full AI agent</td>
+              <td>✅ Yes</td>
+              <td>✅ Yes</td>
+            </tr>
+            <tr>
+              <td>Gorgias</td>
+              <td>$300—600+</td>
+              <td>⚠️ $0.90/resolution extra</td>
+              <td>❌ Their cloud</td>
+              <td>❌ No</td>
+            </tr>
+            <tr>
+              <td>eDesk</td>
+              <td>$210—400+</td>
+              <td>⚠️ $21/agent/month extra</td>
+              <td>❌ Their cloud</td>
+              <td>✅ Yes</td>
+            </tr>
+            <tr>
+              <td>Zendesk</td>
+              <td>$300—550+</td>
+              <td>⚠️ +$50/agent/month</td>
+              <td>❌ Their cloud</td>
+              <td>❌ No</td>
+            </tr>
+            <tr>
+              <td>Outsourced Agents</td>
+              <td>$1,500—2,500</td>
+              <td>❌ Human only</td>
+              <td>N/A</td>
+              <td>N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (for GEO) -->
+  <section id="faq" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary>How does the AI customer service agent work for my Amazon store?</summary>
+          <p>The AI agent is deployed on your own server using the open-source Dify RAG framework and DeepSeek LLM. It learns from your product documentation, past customer conversations, and returns policy. When a buyer sends a message, the AI retrieves the most relevant knowledge, generates an accurate response, and sends it — all in under 30 seconds, 24/7, in 12 languages.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is the cost compared to hiring customer service agents?</summary>
+          <p>Our Starter plan is $99/month plus a one-time $299 setup fee. A single outsourced customer service agent costs $800-1,500/month. Two agents to cover time zones? That doubles. Our Growth plan at $199/month replaces 2 full-time agents and delivers 24/7 coverage — saving over 90% in labor costs.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Where is my customer data stored? Who owns it?</summary>
+          <p>All data is stored on YOUR server. Unlike SaaS solutions like Zendesk or Gorgias, nothing goes to our cloud. The code is open-source (Dify on GitHub with 60,000+ stars), so you or any developer can audit it. If you ever stop working with us, your system keeps running — there is no vendor lock-in.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Which languages does the AI agent support?</summary>
+          <p>The agent supports 12 languages natively: English, Spanish, German, French, Japanese, Chinese, Italian, Portuguese, Dutch, Korean, Arabic, and Russian. It auto-detects the customer's language from their message and responds in the same language with natural, human-like fluency.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How long does it take to set up?</summary>
+          <p>From signing up to having your AI agent responding to customers, it takes 3-5 business days. We handle the full setup: server deployment (on your existing server or we recommend one), knowledge base construction from your product docs, and accuracy testing against real customer scenarios. You just provide the content.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I need technical knowledge to use this?</summary>
+          <p>No. We handle all technical aspects — server deployment, configuration, optimization, and monitoring. You interact with the system through a simple English dashboard. If you do have a developer on your team, they get full access to the open-source codebase and can customize anything.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What happens during Amazon peak seasons (Prime Day, Black Friday)?</summary>
+          <p>The AI agent scales automatically. Unlike SaaS solutions that charge per message or per resolution (meaning your bill doubles during peak), our fixed monthly pricing stays the same regardless of volume. The agent handles 50 or 500 concurrent chats with no performance degradation.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do you ensure the AI gives accurate answers?</summary>
+          <p>We use Retrieval-Augmented Generation (RAG), which means the AI only answers based on YOUR actual product data and policies — not generic knowledge that could be wrong. Every response is grounded in your knowledge base. Additionally, we run weekly accuracy audits and continuously optimize the knowledge base based on real conversation data.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm <strong>Tianyuan Chen</strong>, an AI infrastructure engineer and Master's candidate in Applied AI at Hong Kong Chu Hai College.</p>
+          <p>I'm not a salesperson at a SaaS company. I'm the person who <strong>builds your system</strong>, <strong>optimizes your knowledge base</strong>, and <strong>monitors your AI's performance</strong> every week. When you message me, you get the engineer — not a support ticket.</p>
+          <p>I built this because I saw Amazon sellers struggling with the same problem: spending thousands on customer service agents who only work 8 hours a day, leaving customers waiting 12+ hours for a simple WISMO reply. The technology to solve this exists. It just needs someone to deploy, customize, and maintain it — that's me.</p>
+          <div class="about-credentials">
+            <div class="credential">
+              <span class="credential-icon">🎓</span>
+              <span>MSc Applied AI, HK Chu Hai College</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">🔧</span>
+              <span>Full-stack developer experienced in AI deployment</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">🔓</span>
+              <span>Open-source advocate — all code on GitHub</span>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">🌏</span>
+              <span>Based in China · Serving sellers worldwide</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="section section-cta">
+    <div class="container">
+      <h2>Ready to Automate Your Customer Service?</h2>
+      <p class="cta-lead">Book a free 15-minute call. Tell me about your store, and I'll show you exactly how the AI agent would work for your products.</p>
+      <div class="cta-buttons">
+        <a href="https://calendly.com/tianyuan-chen" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Book a Call (Calendly)</a>
+        <span class="cta-divider">or</span>
+        <a href="mailto:arthaschan@163.com" class="btn btn-outline btn-lg">Send an Email</a>
+      </div>
+      <p class="cta-soft">You can also DM me on <a href="https://reddit.com/user/tianyuan-chen" target="_blank" rel="noopener">Reddit</a> or find me on <a href="https://github.com/arthaschan" target="_blank" rel="noopener">GitHub</a>.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-logo">Tianyuan <span class="text-accent">Chen</span></p>
+          <p>AI Infrastructure for E-Commerce</p>
+          <p class="footer-note">Last updated: August 2026</p>
+        </div>
+        <div class="footer-links">
+          <h4>Product</h4>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#results">Case Study</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <a href="https://github.com/arthaschan" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/tianyuan-chen" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:arthaschan@163.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Tianyuan Chen. Built with plain HTML. No frameworks, no trackers, no nonsense.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
