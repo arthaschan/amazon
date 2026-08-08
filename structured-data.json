@@ -1,0 +1,116 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Tianyuan Chen",
+      "givenName": "Tianyuan",
+      "familyName": "Chen",
+      "description": "AI Infrastructure Engineer specializing in open-source customer service agents for e-commerce sellers.",
+      "url": "https://arthaschan.github.io/amazon",
+      "email": "arthas0506@gmail.com",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Hong Kong Chu Hai College"
+      },
+      "knowsAbout": [
+        "AI Customer Service",
+        "Retrieval-Augmented Generation (RAG)",
+        "Large Language Models",
+        "E-Commerce Automation",
+        "Amazon Seller Tools",
+        "Open-Source AI Deployment",
+        "Dify Platform",
+        "DeepSeek LLM"
+      ],
+      "sameAs": [
+        "https://github.com/arthaschan",
+        "https://arthaschan.github.io/cv/index.html",
+        "https://www.linkedin.com/in/arthaschan"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "name": "Tianyuan Chen — AI Infrastructure",
+      "url": "https://arthaschan.github.io/amazon",
+      "description": "Independent AI infrastructure consultant deploying open-source customer service agents for e-commerce sellers.",
+      "founder": {
+        "@type": "Person",
+        "name": "Tianyuan Chen"
+      },
+      "areaServed": [
+        {"@type": "Country", "name": "United States"},
+        {"@type": "Country", "name": "United Kingdom"},
+        {"@type": "Country", "name": "Germany"},
+        {"@type": "Country", "name": "Japan"}
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AI Customer Service Agent for Amazon Sellers",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Linux",
+      "description": "Self-hosted AI customer service agent using open-source Dify + DeepSeek. Handles 80% of repetitive buyer questions automatically.",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "99",
+        "highPrice": "399",
+        "priceCurrency": "USD",
+        "offerCount": "3"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the AI customer service agent work for my Amazon store?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI agent is deployed on your own server using open-source Dify RAG framework and DeepSeek LLM. It learns from your product documentation, past customer conversations, and returns policy to automatically handle 80% of repetitive buyer questions — 24/7, in 12 languages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the cost compared to hiring customer service agents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our Starter plan is $99/month plus a one-time $299 setup fee. A single outsourced customer service agent costs $800-1,500/month. Our solution handles the same volume at a fraction of the cost, works 24/7 across time zones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is my customer data stored?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All data is stored on YOUR server. Nothing goes to our cloud. The code is open-source (Dify on GitHub with 60k+ stars), so you can audit it yourself. If you ever stop working with us, your system keeps running."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which languages does the AI agent support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The agent supports 12 languages natively: English, Spanish, German, French, Japanese, Chinese, Italian, Portuguese, Dutch, Korean, Arabic, and Russian. It auto-detects the customer's language and responds naturally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to set up?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From signing up to having your AI agent online, it takes 3-5 business days. We handle the full setup: server deployment, knowledge base construction, and accuracy testing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your pricing model?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer three fixed-price tiers. Starter: $299 setup + $99/month. Growth: $499 setup + $199/month. Pro: $999 setup + $399/month. No per-seat fees, no per-message charges, no hidden usage costs."
+          }
+        }
+      ]
+    }
+  ]
+}

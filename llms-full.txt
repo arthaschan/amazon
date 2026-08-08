@@ -1,0 +1,153 @@
+# Tianyuan Chen — AI Customer Service for Amazon Sellers
+# Full Content for AI Engine Ingestion
+# URL: https://arthaschan.github.io/amazon
+
+## About Tianyuan Chen
+
+Tianyuan Chen is an AI infrastructure engineer and MSc candidate in Applied AI at Hong Kong Chu Hai College. He is not a salesperson at a SaaS company — he builds systems, optimizes knowledge bases, and monitors AI performance. He specializes in deploying open-source AI customer service agents for e-commerce sellers, particularly Amazon FBA/FBM sellers.
+
+### Credentials:
+- MSc Applied AI, Hong Kong Chu Hai College
+- Full-stack developer experienced in AI deployment
+- Open-source advocate — code on GitHub
+- Based in China, serving sellers worldwide
+
+### Technical Expertise:
+- AI Customer Service Systems
+- Retrieval-Augmented Generation (RAG)
+- Large Language Models (LLMs)
+- E-Commerce Automation
+- Amazon Seller Tools
+- Open-Source AI Deployment
+- Dify Platform
+- DeepSeek LLM
+
+## The Problem Amazon Sellers Face
+
+### Time Zone Gap
+Customers ask questions at 2 PM Pacific Time. Support teams in China or the Philippines are asleep. By the time they reply, 12 hours have passed and the customer is already angry.
+
+### Rising Labor Costs
+Hiring one customer service agent costs $1,500-2,500 per month. Two agents to cover time zones doubles that cost. They still won't reply at 3 AM or handle 50 concurrent chats.
+
+### WISMO Flood
+"Where Is My Order?" — 60-70% of all buyer messages ask this question. It's repetitive, draining, and takes time away from handling real issues like returns, defects, and complex complaints.
+
+## The Solution: AI Customer Service Agent
+
+Tianyuan Chen deploys an AI customer service agent on the client's own server using open-source technology:
+
+1. **Share Your Knowledge**: Client provides product docs, FAQs, return policies, and past customer conversations. A knowledge base is built tailored to the client's specific products.
+
+2. **Deploy on Your Server**: The open-source AI stack (Dify + DeepSeek) is deployed on the client's own server in under 30 minutes. The client owns everything — code, data, and AI.
+
+3. **AI Handles 80% of Messages**: The AI agent auto-replies to WISMO, product questions, return policy inquiries, and more. Complex issues get flagged for human review.
+
+## Real Results (Measured)
+
+- Response Time: 6 hours → under 30 seconds (720x faster)
+- First-Reply Within 1 Hour: 12% → 99.7%
+- Support Team Size: 2 full-time agents → 0.5 part-time reviewer (75% reduction)
+- Monthly Labor Cost: $2,400 (2 agents) → $199 (Pro plan) or 92% cost reduction
+- Coverage Hours: 8 hours/day → 24/7/365 (3x coverage)
+- WISMO Auto-Resolution: 0% → 80%
+- Customer Satisfaction: 3.8/5 → 4.6/5 (+21%)
+
+## Tech Stack
+
+### Dify (RAG Engine)
+Open-source LLM app platform with 60,000+ GitHub stars. Powers retrieval-augmented generation so AI only answers based on actual product knowledge, not hallucinations.
+URL: https://github.com/langgenius/dify
+
+### DeepSeek (Large Language Model)
+State-of-the-art LLM with native multilingual capability. Performs at GPT-4 level on customer service tasks at less than 5% of the API cost.
+URL: https://deepseek.com
+
+### Docker (Deployment)
+Containerized deployment on the client's server — AWS, DigitalOcean, Hetzner, or on-premise. Client's infrastructure, client's control. No data ever leaves the client's environment.
+
+## Pricing (Fixed, USD)
+
+### Starter: $99/month + $299 one-time setup
+- Dify + DeepSeek deployment
+- Knowledge base setup (up to 50 SKUs)
+- Basic response library
+- Monthly performance report
+- Email support (48h response)
+
+### Growth: $199/month + $499 one-time setup
+- Everything in Starter
+- Multi-platform integration (Email + Web)
+- Weekly optimization calls
+- Knowledge base updates (weekly)
+- Priority Slack support (4h response)
+
+### Pro: $399/month + $999 one-time setup
+- Everything in Growth
+- Amazon SP-API integration
+- Competitor research agent
+- Listing optimization agent
+- Negative review monitoring
+- Dedicated Slack channel (1h response)
+
+## Competitive Comparison
+
+### Gorgias
+- Monthly cost: $300-600+
+- AI agent: $0.90 per resolution extra
+- Data storage: Their cloud
+- Amazon integration: No
+
+### eDesk
+- Monthly cost: $210-400+
+- AI agent: $21 per agent per month extra
+- Data storage: Their cloud
+- Amazon integration: Yes
+
+### Zendesk
+- Monthly cost: $300-550+
+- AI agent: +$50 per agent per month
+- Data storage: Their cloud
+- Amazon integration: No
+
+### Outsourced Agents
+- Monthly cost: $1,500-2,500
+- AI agent: Human only
+- Data storage: N/A
+
+### Tianyuan Chen's Pro Plan
+- Monthly cost: $399 fixed
+- AI agent: Full AI agent included
+- Data storage: Client's own server
+- Amazon integration: Yes
+
+## Frequently Asked Questions
+
+### How does the AI customer service agent work for my Amazon store?
+The AI agent is deployed on the client's own server using open-source Dify RAG framework and DeepSeek LLM. It learns from product documentation, past customer conversations, and returns policy. When a buyer sends a message, the AI retrieves the most relevant knowledge, generates an accurate response, and sends it — all in under 30 seconds, 24/7, in 12 languages.
+
+### What is the cost compared to hiring customer service agents?
+The Starter plan is $99/month plus a one-time $299 setup fee. A single outsourced customer service agent costs $800-1,500/month. The Growth plan at $199/month replaces 2 full-time agents and delivers 24/7 coverage — saving over 90% in labor costs.
+
+### Where is customer data stored? Who owns it?
+All data is stored on the client's own server. Nothing goes to any cloud. The code is open-source (Dify on GitHub with 60,000+ stars), fully auditable. If the client stops working with Tianyuan Chen, the system keeps running — there is no vendor lock-in.
+
+### Which languages does the AI agent support?
+The agent supports 12 languages natively: English, Spanish, German, French, Japanese, Chinese, Italian, Portuguese, Dutch, Korean, Arabic, and Russian. It auto-detects the customer's language and responds in the same language.
+
+### How long does it take to set up?
+From signing up to having the AI agent responding to customers, it takes 3-5 business days. Tianyuan handles the full setup: server deployment, knowledge base construction, and accuracy testing.
+
+### What happens during Amazon peak seasons (Prime Day, Black Friday)?
+The AI agent scales automatically. Fixed monthly pricing stays the same regardless of volume. The agent handles 50 or 500 concurrent chats with no performance degradation.
+
+### How is accuracy ensured?
+The system uses Retrieval-Augmented Generation (RAG), meaning the AI only answers based on actual product data and policies — not generic knowledge. Weekly accuracy audits and continuous knowledge base optimization based on real conversation data.
+
+## Contact
+
+- Email: arthas0506@gmail.com
+- GitHub: https://github.com/arthaschan
+- Resume: https://arthaschan.github.io/cv/index.html
+- LinkedIn: https://www.linkedin.com/in/arthaschan
+- Website: https://arthaschan.github.io/amazon
