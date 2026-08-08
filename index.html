@@ -13,10 +13,12 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tianyuan Chen — AI Customer Service for Amazon Sellers">
   <meta name="twitter:description" content="Open-source AI agents on your server. Fixed pricing. Your data, your code, your AI.">
+  <meta property="og:image" content="https://arthaschan.github.io/amazon/images/og-cover.jpg">
   <link rel="canonical" href="https://arthaschan.github.io/amazon">
   <link rel="llms" type="text/plain" href="/llms.txt" title="AI Engine Discovery">
   <link rel="llms-full" type="text/plain" href="/llms-full.txt" title="Full Content for AI">
   <title>Tianyuan Chen — AI Customer Service Agent for Amazon Sellers | Open-Source, Self-Hosted</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
 
   <!-- Schema.org Structured Data for GEO -->
   <script type="application/ld+json">
@@ -148,14 +150,17 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="#" class="nav-logo">Tianyuan <span class="text-accent">Chen</span></a>
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-icon">TC</span>
+        Tianyuan Chen
+      </a>
       <div class="nav-links">
         <a href="#product">Product</a>
         <a href="#how-it-works">How It Works</a>
@@ -172,8 +177,11 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-text">
-          <span class="badge">Open-Source · Self-Hosted · Fixed Pricing</span>
-          <h1>Your AI Customer Service Agent <span class="text-accent">on Your Server</span></h1>
+          <span class="badge">
+            <span class="badge-dot"></span>
+            Open-Source · Self-Hosted · Fixed Pricing
+          </span>
+          <h1>Your AI Customer Service Agent <span class="text-gradient">on Your Server</span></h1>
           <p class="hero-lead">I deploy an AI agent that replies to your Amazon buyer messages in <strong>under 30 seconds</strong> — in <strong>12 languages</strong>, <strong>24/7</strong>, at <strong>1/10th the cost</strong> of hiring human agents. Your data, your code, your AI. No vendor lock-in.</p>
           <div class="hero-ctas">
             <a href="#contact" class="btn btn-primary btn-lg">Book a Free 15-Min Call</a>
@@ -200,6 +208,10 @@
         </div>
         <div class="hero-visual">
           <div class="hero-card">
+            <div class="hero-card-header">
+              <span class="hero-card-header-dot"></span>
+              <span class="hero-card-header-text">AI Agent Online · Amazon Seller Central</span>
+            </div>
             <div class="chat-bubble chat-incoming">
               <span class="chat-time">2:30 PM Pacific</span>
               "Where is my order #AMZ-48291?"
@@ -212,9 +224,26 @@
               <span class="chat-time">2:31 PM Pacific</span>
               "Thank you!"
             </div>
-            <div class="chat-label">AI Agent · Responded in 12 seconds</div>
+            <div class="chat-label">
+              <span class="hero-card-header-dot"></span>
+              AI Agent · Responded in 12 seconds
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="container">
+      <p class="trust-bar-label">Built on open-source technology trusted by developers worldwide</p>
+      <div class="trust-logos">
+        <span class="trust-logo">Dify · 60k+ stars</span>
+        <span class="trust-logo">DeepSeek</span>
+        <span class="trust-logo">Docker</span>
+        <span class="trust-logo">Apache 2.0</span>
+        <span class="trust-logo">Linux</span>
       </div>
     </div>
   </section>
@@ -223,6 +252,7 @@
   <section id="product" class="section">
     <div class="container">
       <h2 class="section-title">The Problem Amazon Sellers Face</h2>
+      <p class="section-subtitle">Every Amazon seller hits the same wall: customer messages pile up faster than humans can reply. Here's what it costs you.</p>
       <div class="problem-grid">
         <div class="problem-card">
           <div class="problem-icon">🌍</div>
@@ -238,6 +268,24 @@
           <div class="problem-icon">📊</div>
           <h3>WISMO Flood</h3>
           <p>"Where Is My Order?" — 60-70% of all buyer messages ask this. It's repetitive, draining, and takes time away from handling real issues like returns, defects, and complex complaints.</p>
+        </div>
+      </div>
+
+      <!-- Image Showcase -->
+      <div class="image-showcase">
+        <div class="image-showcase-item">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80" alt="Amazon packages ready for shipping" loading="lazy">
+          <div class="overlay">
+            <div class="overlay-label">USE CASE 01</div>
+            <div class="overlay-title">Shipping & Order Tracking</div>
+          </div>
+        </div>
+        <div class="image-showcase-item">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop&q=80" alt="AI customer service dashboard" loading="lazy">
+          <div class="overlay">
+            <div class="overlay-label">USE CASE 02</div>
+            <div class="overlay-title">24/7 AI Concierge in 12 Languages</div>
+          </div>
         </div>
       </div>
     </div>
@@ -341,20 +389,29 @@
       <p class="section-subtitle">Not another black-box SaaS. Every component is open-source and auditable.</p>
       <div class="tech-grid">
         <div class="tech-card">
-          <h3>Dify</h3>
+          <div class="tech-logo">
+            <img src="images/dify-logo.svg" alt="Dify" width="56" height="56" style="border-radius:14px;">
+          </div>
           <p class="tech-subtitle">RAG Engine</p>
+          <h3>Dify</h3>
           <p>Open-source LLM app platform with <strong>60,000+ GitHub stars</strong>. Powers retrieval-augmented generation — your AI only answers based on YOUR actual product knowledge, not hallucinations.</p>
           <a href="https://github.com/langgenius/dify" target="_blank" rel="noopener" class="link">github.com/langgenius/dify →</a>
         </div>
         <div class="tech-card">
-          <h3>DeepSeek</h3>
+          <div class="tech-logo">
+            <img src="images/deepseek-logo.svg" alt="DeepSeek" width="56" height="56" style="border-radius:14px;">
+          </div>
           <p class="tech-subtitle">Large Language Model</p>
+          <h3>DeepSeek</h3>
           <p>State-of-the-art LLM with <strong>native multilingual capability</strong>. Performs at GPT-4 level on customer service tasks — at less than <strong>5% of the API cost</strong>.</p>
           <a href="https://deepseek.com" target="_blank" rel="noopener" class="link">deepseek.com →</a>
         </div>
         <div class="tech-card">
-          <h3>Docker</h3>
+          <div class="tech-logo">
+            <img src="images/docker-logo.svg" alt="Docker" width="56" height="56" style="border-radius:14px;">
+          </div>
           <p class="tech-subtitle">Deployment</p>
+          <h3>Docker</h3>
           <p>Containerized deployment on YOUR server — AWS, DigitalOcean, Hetzner, or on-premise. <strong>Your infrastructure, your control.</strong> No data ever leaves your environment.</p>
         </div>
       </div>
@@ -374,11 +431,11 @@
           </div>
           <p class="price-setup">+ $299 one-time setup</p>
           <ul class="price-features">
-            <li>✅ Dify + DeepSeek deployment</li>
-            <li>✅ Knowledge base setup (up to 50 SKUs)</li>
-            <li>✅ Basic response library</li>
-            <li>✅ Monthly performance report</li>
-            <li>✅ Email support (48h response)</li>
+            <li>Dify + DeepSeek deployment</li>
+            <li>Knowledge base setup (up to 50 SKUs)</li>
+            <li>Basic response library</li>
+            <li>Monthly performance report</li>
+            <li>Email support (48h response)</li>
           </ul>
           <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
         </div>
@@ -391,11 +448,11 @@
           </div>
           <p class="price-setup">+ $499 one-time setup</p>
           <ul class="price-features">
-            <li>✅ Everything in Starter</li>
-            <li>✅ Multi-platform integration (Email + Web)</li>
-            <li>✅ Weekly optimization calls</li>
-            <li>✅ Knowledge base updates (weekly)</li>
-            <li>✅ Priority Slack support (4h response)</li>
+            <li>Everything in Starter</li>
+            <li>Multi-platform integration (Email + Web)</li>
+            <li>Weekly optimization calls</li>
+            <li>Knowledge base updates (weekly)</li>
+            <li>Priority Slack support (4h response)</li>
           </ul>
           <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
         </div>
@@ -407,12 +464,12 @@
           </div>
           <p class="price-setup">+ $999 one-time setup</p>
           <ul class="price-features">
-            <li>✅ Everything in Growth</li>
-            <li>✅ Amazon SP-API integration</li>
-            <li>✅ Competitor research agent</li>
-            <li>✅ Listing optimization agent</li>
-            <li>✅ Negative review monitoring</li>
-            <li>✅ Dedicated Slack channel (1h response)</li>
+            <li>Everything in Growth</li>
+            <li>Amazon SP-API integration</li>
+            <li>Competitor research agent</li>
+            <li>Listing optimization agent</li>
+            <li>Negative review monitoring</li>
+            <li>Dedicated Slack channel (1h response)</li>
           </ul>
           <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
         </div>
@@ -535,17 +592,21 @@
             </div>
             <div class="credential">
               <span class="credential-icon">🔧</span>
-              <span>Full-stack developer experienced in AI deployment</span>
+              <span>Full-stack developer in AI deployment</span>
             </div>
             <div class="credential">
               <span class="credential-icon">🔓</span>
-              <span>Open-source advocate — all code on GitHub</span>
+              <span>Open-source advocate — code on GitHub</span>
             </div>
             <div class="credential">
               <span class="credential-icon">🌏</span>
               <span>Based in China · Serving sellers worldwide</span>
             </div>
           </div>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&auto=format&fit=crop&q=80" alt="AI workspace and code" loading="lazy">
+          <div class="about-image-overlay"></div>
         </div>
       </div>
     </div>
@@ -570,7 +631,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <p class="footer-logo">Tianyuan <span class="text-accent">Chen</span></p>
+          <p class="footer-logo">
+            <span class="nav-logo-icon">TC</span>
+            Tianyuan Chen
+          </p>
           <p>AI Infrastructure for E-Commerce</p>
           <p class="footer-note">Last updated: August 2026</p>
         </div>
