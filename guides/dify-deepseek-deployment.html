@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Step-by-step guide to deploying a self-hosted AI customer service agent with Dify (RAG) and DeepSeek (LLM) on your own server. From zero to live in 5 days.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arthaschan.github.io/amazon/guides/dify-deepseek-deployment.html">
+  <meta property="og:title" content="Deploy a Self-Hosted AI Agent with Dify + DeepSeek">
+  <meta property="og:description" content="Open-source AI customer service on your own server. Dify for RAG, DeepSeek for the LLM, Docker for deployment. Full walkthrough.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://arthaschan.github.io/amazon/guides/dify-deepseek-deployment.html">
+  <title>Deploy a Self-Hosted AI Customer Service Agent with Dify + DeepSeek</title>
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Deploy a Self-Hosted AI Customer Service Agent with Dify + DeepSeek",
+    "description": "Step-by-step guide to deploying a self-hosted AI customer service agent using Dify RAG and DeepSeek LLM on your own server.",
+    "author": {"@type": "Person", "name": "Tianyuan Chen", "url": "https://arthaschan.github.io/amazon"},
+    "datePublished": "2026-08-14",
+    "dateModified": "2026-08-14",
+    "mainEntityOfPage": "https://arthaschan.github.io/amazon/guides/dify-deepseek-deployment.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What do I need to deploy a self-hosted AI customer service agent?",
+        "acceptedAnswer": {"@type": "Answer", "text": "You need a Linux server (2 CPU, 4GB RAM recommended, from $6/month), a DeepSeek API key, and your product documentation. The stack is Dify for RAG, DeepSeek for the LLM, and Docker for deployment. The full setup takes 3-5 days."}
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a Dify + DeepSeek deployment cost?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Infrastructure costs $6-20/month for a small VPS, plus $5-15/month in DeepSeek API usage at typical Amazon seller volume. DeepSeek performs at GPT-4 level on customer service tasks at about 1/20th the API cost."}
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to be a developer to run Dify?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. Dify is deployed with a single docker-compose command, and the platform has a visual interface for building the knowledge base and chat flow. A deployment service or experienced engineer can handle the initial setup if you prefer not to touch the server yourself."}
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/article.css">
+</head>
+<body>
+
+  <header class="article-header">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html">Home</a> / Guides / Deployment</div>
+      <h1>Deploy a Self-Hosted AI Customer Service Agent with Dify + DeepSeek</h1>
+      <p class="lede">The exact stack and steps to run your own AI customer service — on your server, with your data, at a fraction of SaaS cost.</p>
+      <p class="meta">By Tianyuan Chen · Updated August 2026</p>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="wrap">
+
+      <h2>The Stack</h2>
+      <p>Three open-source components, nothing proprietary:</p>
+      <table>
+        <thead><tr><th>Component</th><th>What it does</th><th>GitHub</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Dify</strong></td><td>RAG engine — builds and queries your knowledge base so the AI only answers from your real data</td><td>60,000+ stars</td></tr>
+          <tr><td><strong>DeepSeek</strong></td><td>LLM — generates natural replies in 12 languages at GPT-4 level for ~1/20th the cost</td><td>deepseek.com</td></tr>
+          <tr><td><strong>Docker</strong></td><td>Containerization — one command to deploy, environment-isolated, easy to back up</td><td>docker.com</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>A Linux server — 2 CPU / 4GB RAM / 50GB disk recommended. Hetzner ($6/mo), DigitalOcean ($12/mo), or AWS Lightsail ($10/mo)</li>
+        <li>A DeepSeek API key — register at deepseek.com, $10 credit lasts months at typical volume</li>
+        <li>Your product docs, FAQ, and return policy (Word, PDF, or web links all work)</li>
+      </ul>
+
+      <h2>Deployment Timeline</h2>
+      <ol>
+        <li><strong>Day 1</strong> — gather your product docs, FAQ, and return policy</li>
+        <li><strong>Day 2</strong> — deploy Dify via Docker, connect DeepSeek API, build the knowledge base</li>
+        <li><strong>Day 3</strong> — test accuracy against 100+ real buyer messages, tune prompts</li>
+        <li><strong>Day 4-5</strong> — go live, monitor, and let the AI handle the routine messages</li>
+      </ol>
+
+      <div class="callout">
+        <p><strong>Open source:</strong> the full deployment — docker-compose, prompt templates, and knowledge-base structure — is available on GitHub at <a href="https://github.com/arthaschan" target="_blank" rel="noopener">github.com/arthaschan</a>. Fork it and deploy it yourself, or hire me to set it up for you.</p>
+      </div>
+
+      <h2>Why Self-Host Instead of SaaS</h2>
+      <ul>
+        <li><strong>Data ownership</strong> — every buyer message stays on your server. No third party has a copy of your customer relationships</li>
+        <li><strong>No usage fees</strong> — SaaS tools charge per message or per AI resolution; your only variable cost is the DeepSeek API, at a few cents per hundred messages</li>
+        <li><strong>No vendor lock-in</strong> — the code is open-source. If you stop working with any provider, your system keeps running</li>
+        <li><strong>Auditable</strong> — you can inspect every line of code, every prompt, every response</li>
+      </ul>
+
+      <h2>How It Connects to Amazon</h2>
+      <p>The AI agent reads Amazon Buyer-Seller messages and replies. At the Starter level, it uses your order data and tracking numbers. At the Pro level, it integrates with <strong>Amazon SP-API</strong> to pull live order status, tracking, and delivery estimates automatically — so WISMO answers are always accurate and up to date.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq-item">
+        <summary>How accurate is the AI out of the box?</summary>
+        <p>Around 90%+ on repetitive questions (WISMO, product specs, return policy) once the knowledge base is built. Accuracy depends on how complete your product docs are. Weekly audits and tuning push it higher over time.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I migrate off later?</summary>
+        <p>Yes. Everything runs in Docker on your server, so you can export the knowledge base, prompts, and configuration at any time. There's no proprietary lock-in.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if my server goes down?</summary>
+        <p>For a small seller, a single VPS with a daily backup is usually sufficient. Larger sellers can run a load-balanced setup. Since you own the infrastructure, your uptime is entirely under your control.</p>
+      </details>
+
+      <div class="cta-box">
+        <h2>Want it deployed without touching the server?</h2>
+        <p>I'll handle the full setup — Docker, Dify, knowledge base, and accuracy testing — in 3-5 days.</p>
+        <a class="btn" href="mailto:arthas0506@gmail.com">Start Deployment</a>
+        <a class="btn btn-ghost" href="../index.html">Learn More</a>
+      </div>
+
+      <div class="related">
+        <h3>Related Guides</h3>
+        <a href="wisno-automation.html">How to Automate WISMO Messages on Amazon</a>
+        <a href="ai-customer-service-cost.html">The Real Cost of Amazon Customer Service</a>
+      </div>
+
+    </div>
+  </article>
+
+  <footer class="article-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Tianyuan Chen · <a href="../index.html">Home</a> · <a href="mailto:arthas0506@gmail.com">Contact</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

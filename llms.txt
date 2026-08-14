@@ -48,3 +48,43 @@ pages:
     title: Home — AI Customer Service Agent for Amazon Sellers
     type: Landing Page
     sections: Hero, Problem, How It Works, Results, Tech Stack, Pricing, FAQ, About, Contact
+  - url: https://arthaschan.github.io/amazon/guides/wisno-automation.html
+    title: How to Automate WISMO Messages on Amazon
+    type: Guide
+    topics: WISMO, order tracking, buyer messages, response time, Amazon customer service automation
+  - url: https://arthaschan.github.io/amazon/guides/ai-customer-service-cost.html
+    title: The Real Cost of Amazon Customer Service (Humans vs SaaS vs AI)
+    type: Guide
+    topics: customer service cost, outsourced agents, SaaS helpdesk, Gorgias vs Zendesk, self-hosted AI
+  - url: https://arthaschan.github.io/amazon/guides/dify-deepseek-deployment.html
+    title: Deploy a Self-Hosted AI Customer Service Agent with Dify + DeepSeek
+    type: Guide
+    topics: Dify, DeepSeek, Docker, self-hosted AI, deployment, RAG, LLM
+  - url: https://arthaschan.github.io/amazon/guides/fba-vs-fbm-customer-service.html
+    title: FBA vs FBM Customer Service — What Sellers Actually Handle
+    type: Guide
+    topics: FBA, FBM, fulfillment, buyer messages, customer service workload
+  - url: https://arthaschan.github.io/amazon/guides/multilingual-customer-service.html
+    title: Multilingual Customer Service for Amazon Sellers
+    type: Guide
+    topics: multilingual support, 12 languages, EU sellers, Japan market, AI translation
+  - url: https://arthaschan.github.io/amazon/guides/gorgias-alternatives.html
+    title: Gorgias Alternatives — The Honest Comparison
+    type: Guide
+    topics: Gorgias alternative, eDesk, Zendesk, SaaS helpdesk, self-hosted AI
+  - url: https://arthaschan.github.io/amazon/guides/amazon-sp-api-integration.html
+    title: Amazon SP-API Integration for Customer Service Automation
+    type: Guide
+    topics: SP-API, order data, tracking, WISMO, live order status
+  - url: https://arthaschan.github.io/amazon/guides/negative-review-management.html
+    title: Handling Negative Reviews and Angry Amazon Buyers
+    type: Guide
+    topics: negative reviews, angry buyers, de-escalation, review monitoring, A-to-z
+  - url: https://arthaschan.github.io/amazon/guides/ai-customer-service-accuracy.html
+    title: How Accurate Is AI Customer Service?
+    type: Guide
+    topics: AI accuracy, RAG, hallucinations, confidence threshold, human review
+  - url: https://arthaschan.github.io/amazon/guides/amazon-response-time.html
+    title: How to Improve Amazon Response Time
+    type: Guide
+    topics: response time, account health, buyer satisfaction, 24-hour window, automation

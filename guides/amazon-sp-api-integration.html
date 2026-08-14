@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Amazon SP-API integration for customer service automation: how to pull live order data so your AI agent answers WISMO with real tracking numbers and delivery dates.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arthaschan.github.io/amazon/guides/amazon-sp-api-integration.html">
+  <meta property="og:title" content="Amazon SP-API Integration for Customer Service Automation">
+  <meta property="og:description" content="Connect Amazon SP-API to your AI customer service agent to pull live order status and tracking data. The technical walkthrough.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://arthaschan.github.io/amazon/guides/amazon-sp-api-integration.html">
+  <title>Amazon SP-API Integration Guide | Live Order Data for AI Customer Service</title>
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Amazon SP-API Integration for Customer Service Automation",
+    "description": "How to connect Amazon SP-API to your AI customer service agent to pull live order status and tracking data for accurate WISMO replies.",
+    "author": {"@type": "Person", "name": "Tianyuan Chen", "url": "https://arthaschan.github.io/amazon"},
+    "datePublished": "2026-08-14",
+    "dateModified": "2026-08-14",
+    "mainEntityOfPage": "https://arthaschan.github.io/amazon/guides/amazon-sp-api-integration.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Amazon SP-API?",
+        "acceptedAnswer": {"@type": "Answer", "text": "SP-API (Selling Partner API) is Amazon's official API for sellers. It lets you programmatically access your order data, inventory, and reports. For customer service, it's used to pull live order status and tracking information so an AI agent can answer 'where is my order?' accurately."}
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need SP-API to automate Amazon customer service?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. You can start without it by having the AI reply to product and policy questions from your knowledge base. SP-API is needed only for live order status (WISMO) — pulling real tracking numbers and delivery estimates automatically. It's the difference between 'your order is on the way' and 'your order is in transit via UPS, tracking 1Z..., arriving Friday.'"}
+      },
+      {
+        "@type": "Question",
+        "name": "Is Amazon SP-API free?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes, SP-API itself is free for sellers. You register an application in Amazon Seller Central's Developer Central, and there's no per-call fee for your own order data. The cost is only the engineering effort to integrate it."}
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/article.css">
+</head>
+<body>
+
+  <header class="article-header">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html">Home</a> / Guides / SP-API</div>
+      <h1>Amazon SP-API Integration for Customer Service Automation</h1>
+      <p class="lede">The difference between an AI that says "your order is on the way" and one that says "it's in transit via UPS, arriving Friday" — live order data.</p>
+      <p class="meta">By Tianyuan Chen · Updated August 2026</p>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="wrap">
+
+      <h2>Why SP-API Matters for WISMO</h2>
+      <p>An AI agent can answer "where is my order?" two ways:</p>
+      <ol>
+        <li><strong>Without SP-API</strong> — generic reassurance: "Your order is on the way, please allow 3-5 business days." Better than nothing, but it doesn't actually answer the question.</li>
+        <li><strong>With SP-API</strong> — a real answer: "Your order is in transit via UPS, tracking number 1Z999AA1, estimated delivery Friday." This <em>resolves</em> the WISMO instead of deflecting it.</li>
+      </ol>
+      <p>If your goal is to genuinely reduce WISMO volume, SP-API is the upgrade that makes it possible. Without it, the AI is just a polite autoresponder.</p>
+
+      <h2>What SP-API Gives You</h2>
+      <ul>
+        <li><strong>Orders API</strong> — order status, shipping address, buyer info</li>
+        <li><strong>Fulfillment / Tracking</strong> — carrier, tracking number, delivery estimate</li>
+        <li><strong>Listings & Inventory</strong> — product data to feed the knowledge base</li>
+        <li><strong>Reports</strong> — performance data for your weekly review</li>
+      </ul>
+
+      <h2>How the Integration Works</h2>
+      <ol>
+        <li><strong>Register an app</strong> in Amazon Seller Central → Developer Central → create an SP-API application</li>
+        <li><strong>Get credentials</strong> — client ID, client secret, and a refresh token (via LWA authorization)</li>
+        <li><strong>Store securely</strong> — these go in your server's environment variables, never in code</li>
+        <li><strong>Fetch order data</strong> — when a buyer messages, the agent queries the Orders API by order ID</li>
+        <li><strong>Generate the reply</strong> — the LLM turns the raw order data into a natural, accurate response</li>
+      </ol>
+
+      <div class="callout">
+        <p><strong>Security note:</strong> SP-API credentials grant access to your seller account data. Store them in environment variables, rotate the refresh token regularly, and never expose them in client-side code or public repositories.</p>
+      </div>
+
+      <h2>Why Most Sellers Skip This (And Why That's a Mistake)</h2>
+      <p>SP-API integration requires real engineering work — OAuth flows, token refresh, API rate limits. Most sellers skip it and settle for a generic autoresponder, which is why most "AI customer service" tools don't actually resolve WISMO.</p>
+      <p>The sellers who do integrate SP-API get a genuinely different result: their AI answers WISMO with real data, which means buyers stop asking follow-up questions, which means the automation actually pays for itself in reduced message volume.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq-item">
+        <summary>How long does SP-API integration take?</summary>
+        <p>Registering the app and getting credentials takes about an hour. The engineering to connect it to your AI agent and handle token refresh takes 1-2 days for an experienced developer. It's a one-time effort with no ongoing cost.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What are the SP-API rate limits?</summary>
+        <p>Amazon imposes rate limits per endpoint (typically a few requests per second for order queries). For customer service use — fetching order data when a buyer messages — you'll never come close to the limits.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I use SP-API with a self-hosted AI agent?</summary>
+        <p>Yes. SP-API is vendor-agnostic — it's just Amazon's API. Your self-hosted agent (Dify + DeepSeek, or any stack) calls SP-API to pull order data, then uses that data in its replies. There's no requirement to use a specific SaaS tool.</p>
+      </details>
+
+      <div class="cta-box">
+        <h2>Get SP-API connected to your AI agent</h2>
+        <p>I'll handle the full integration — credentials, token refresh, and live order data — so your AI answers WISMO with real tracking info.</p>
+        <a class="btn" href="mailto:arthas0506@gmail.com">Get in Touch</a>
+        <a class="btn btn-ghost" href="../index.html#pricing">View Pro Plan</a>
+      </div>
+
+      <div class="related">
+        <h3>Related Guides</h3>
+        <a href="wisno-automation.html">How to Automate WISMO Messages on Amazon</a>
+        <a href="dify-deepseek-deployment.html">Deploy a Self-Hosted AI Agent</a>
+        <a href="ai-customer-service-accuracy.html">How Accurate Is AI Customer Service?</a>
+      </div>
+
+    </div>
+  </article>
+
+  <footer class="article-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Tianyuan Chen · <a href="../index.html">Home</a> · <a href="mailto:arthas0506@gmail.com">Contact</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
